@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    {{> navbar}}
+    <h1>Edit Employee</h1>
+    <form action="/employees/edit/{{employee._id}}" method="POST">
+        <input type="text" name="firstName" placeholder="First Name" value="{{employee.firstName}}" required>
+        <input type="text" name="lastName" placeholder="Last Name" value="{{employee.lastName}}" required>
+        <select name="department" required>
+            <option value="HR" {{eq employee.department "HR"}}>HR</option>
+            <option value="Tech" {{eq employee.department "Tech"}}>Tech</option>
+            <option value="Finance" {{eq employee.department "Finance"}}>Finance</option>
+        </select>
+
+        <input type="date" name="startDate" value="{{employee.startDate}}" required>
+
+        <input type="text" name="jobTitle" placeholder="Job Title" value="{{employee.jobTitle}}" required>
+        <input type="number" name="salary" placeholder="Salary" value="{{employee.salary}}" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

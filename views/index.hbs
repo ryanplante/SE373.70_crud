@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    {{> navbar}}
+    <h1>Create Employee</h1>
+    <form action="/employees" method="POST">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <select name="department" required>
+            <option value="HR">HR</option>
+            <option value="Tech">Tech</option>
+            <option value="Finance">Finance</option>
+        </select>
+        <input type="date" name="startDate" required>
+        <input type="text" name="jobTitle" placeholder="Job Title" required>
+        <input type="number" name="salary" placeholder="Salary" required>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
